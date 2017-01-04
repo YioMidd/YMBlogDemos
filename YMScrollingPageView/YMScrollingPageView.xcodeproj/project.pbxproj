@@ -1,0 +1,391 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A100F5A6A01240E727111E0F /* Pods_YMScrollingPageView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 178B35C3FB656DFAD0DF5FD0 /* Pods_YMScrollingPageView.framework */; };
+		DD0592AD1E1CB7ED008C77A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0592AC1E1CB7ED008C77A2 /* AppDelegate.swift */; };
+		DD0592AF1E1CB7ED008C77A2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0592AE1E1CB7ED008C77A2 /* ViewController.swift */; };
+		DD0592B21E1CB7ED008C77A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD0592B01E1CB7ED008C77A2 /* Main.storyboard */; };
+		DD0592B41E1CB7ED008C77A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD0592B31E1CB7ED008C77A2 /* Assets.xcassets */; };
+		DD0592B71E1CB7ED008C77A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD0592B51E1CB7ED008C77A2 /* LaunchScreen.storyboard */; };
+		DD0592BF1E1CDA6D008C77A2 /* ScrollingPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0592BE1E1CDA6D008C77A2 /* ScrollingPageView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		178B35C3FB656DFAD0DF5FD0 /* Pods_YMScrollingPageView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YMScrollingPageView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F5732BEAFC2130B11AA1E4A /* Pods-YMScrollingPageView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YMScrollingPageView.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YMScrollingPageView/Pods-YMScrollingPageView.debug.xcconfig"; sourceTree = "<group>"; };
+		D508FA6FE3260C7D98DE071F /* Pods-YMScrollingPageView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YMScrollingPageView.release.xcconfig"; path = "Pods/Target Support Files/Pods-YMScrollingPageView/Pods-YMScrollingPageView.release.xcconfig"; sourceTree = "<group>"; };
+		DD0592A91E1CB7ED008C77A2 /* YMScrollingPageView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YMScrollingPageView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD0592AC1E1CB7ED008C77A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DD0592AE1E1CB7ED008C77A2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DD0592B11E1CB7ED008C77A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DD0592B31E1CB7ED008C77A2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DD0592B61E1CB7ED008C77A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DD0592B81E1CB7ED008C77A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DD0592BE1E1CDA6D008C77A2 /* ScrollingPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollingPageView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DD0592A61E1CB7ED008C77A2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A100F5A6A01240E727111E0F /* Pods_YMScrollingPageView.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		097B2D786752130C791A805E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1F5732BEAFC2130B11AA1E4A /* Pods-YMScrollingPageView.debug.xcconfig */,
+				D508FA6FE3260C7D98DE071F /* Pods-YMScrollingPageView.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A79805FCE9F4E2527C31EC1F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				178B35C3FB656DFAD0DF5FD0 /* Pods_YMScrollingPageView.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DD0592A01E1CB7ED008C77A2 = {
+			isa = PBXGroup;
+			children = (
+				DD0592AB1E1CB7ED008C77A2 /* YMScrollingPageView */,
+				DD0592AA1E1CB7ED008C77A2 /* Products */,
+				097B2D786752130C791A805E /* Pods */,
+				A79805FCE9F4E2527C31EC1F /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		DD0592AA1E1CB7ED008C77A2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DD0592A91E1CB7ED008C77A2 /* YMScrollingPageView.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DD0592AB1E1CB7ED008C77A2 /* YMScrollingPageView */ = {
+			isa = PBXGroup;
+			children = (
+				DD0592AC1E1CB7ED008C77A2 /* AppDelegate.swift */,
+				DD0592AE1E1CB7ED008C77A2 /* ViewController.swift */,
+				DD0592B01E1CB7ED008C77A2 /* Main.storyboard */,
+				DD0592B31E1CB7ED008C77A2 /* Assets.xcassets */,
+				DD0592B51E1CB7ED008C77A2 /* LaunchScreen.storyboard */,
+				DD0592B81E1CB7ED008C77A2 /* Info.plist */,
+				DD0592BE1E1CDA6D008C77A2 /* ScrollingPageView.swift */,
+			);
+			path = YMScrollingPageView;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DD0592A81E1CB7ED008C77A2 /* YMScrollingPageView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DD0592BB1E1CB7ED008C77A2 /* Build configuration list for PBXNativeTarget "YMScrollingPageView" */;
+			buildPhases = (
+				B3033DB1D8E9F0C01E0DDF7A /* 📦 Check Pods Manifest.lock */,
+				DD0592A51E1CB7ED008C77A2 /* Sources */,
+				DD0592A61E1CB7ED008C77A2 /* Frameworks */,
+				DD0592A71E1CB7ED008C77A2 /* Resources */,
+				FE8D4079078E517328C1E147 /* 📦 Embed Pods Frameworks */,
+				7469302D61E388946464A96A /* 📦 Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = YMScrollingPageView;
+			productName = YMScrollingPageView;
+			productReference = DD0592A91E1CB7ED008C77A2 /* YMScrollingPageView.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DD0592A11E1CB7ED008C77A2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = YioMidd;
+				TargetAttributes = {
+					DD0592A81E1CB7ED008C77A2 = {
+						CreatedOnToolsVersion = 8.2.1;
+						LastSwiftMigration = 0820;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = DD0592A41E1CB7ED008C77A2 /* Build configuration list for PBXProject "YMScrollingPageView" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DD0592A01E1CB7ED008C77A2;
+			productRefGroup = DD0592AA1E1CB7ED008C77A2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DD0592A81E1CB7ED008C77A2 /* YMScrollingPageView */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DD0592A71E1CB7ED008C77A2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD0592B71E1CB7ED008C77A2 /* LaunchScreen.storyboard in Resources */,
+				DD0592B41E1CB7ED008C77A2 /* Assets.xcassets in Resources */,
+				DD0592B21E1CB7ED008C77A2 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7469302D61E388946464A96A /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YMScrollingPageView/Pods-YMScrollingPageView-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B3033DB1D8E9F0C01E0DDF7A /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		FE8D4079078E517328C1E147 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YMScrollingPageView/Pods-YMScrollingPageView-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DD0592A51E1CB7ED008C77A2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD0592AF1E1CB7ED008C77A2 /* ViewController.swift in Sources */,
+				DD0592AD1E1CB7ED008C77A2 /* AppDelegate.swift in Sources */,
+				DD0592BF1E1CDA6D008C77A2 /* ScrollingPageView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		DD0592B01E1CB7ED008C77A2 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DD0592B11E1CB7ED008C77A2 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DD0592B51E1CB7ED008C77A2 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DD0592B61E1CB7ED008C77A2 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DD0592B91E1CB7ED008C77A2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = "";
+			};
+			name = Debug;
+		};
+		DD0592BA1E1CB7ED008C77A2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = "";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DD0592BC1E1CB7ED008C77A2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1F5732BEAFC2130B11AA1E4A /* Pods-YMScrollingPageView.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = YMScrollingPageView/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yiomidd.YMScrollingPageView;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		DD0592BD1E1CB7ED008C77A2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D508FA6FE3260C7D98DE071F /* Pods-YMScrollingPageView.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = YMScrollingPageView/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yiomidd.YMScrollingPageView;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DD0592A41E1CB7ED008C77A2 /* Build configuration list for PBXProject "YMScrollingPageView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DD0592B91E1CB7ED008C77A2 /* Debug */,
+				DD0592BA1E1CB7ED008C77A2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DD0592BB1E1CB7ED008C77A2 /* Build configuration list for PBXNativeTarget "YMScrollingPageView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DD0592BC1E1CB7ED008C77A2 /* Debug */,
+				DD0592BD1E1CB7ED008C77A2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DD0592A11E1CB7ED008C77A2 /* Project object */;
+}

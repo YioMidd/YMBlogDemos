@@ -1,0 +1,6 @@
+framework module Pods_YMScrollingPageView {
+  umbrella header "Pods-YMScrollingPageView-umbrella.h"
+
+  export *
+  module * { export * }
+}
