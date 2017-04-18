@@ -35,11 +35,12 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"%s",__func__);
     CTDTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([CTDTableViewCell class])];
     if (!cell) {
         cell = [[CTDTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:NSStringFromClass([CTDTableViewCell class])];
     }
-    cell.textLabel.text = [NSString stringWithFormat:@"indexPath row ---- %ld", indexPath.row];
+//    cell.textLabel.text = [NSString stringWithFormat:@"indexPath row ---- %ld", indexPath.row];
     [self drawCell:cell forIndexPath:indexPath];
     return cell;
 }
@@ -50,6 +51,10 @@
     return frame.size.height;
 }
 
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+    [needLoadArr removeAllObjects];
+}
+
 - (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset {
     
     NSIndexPath *targetIndexPath = [self indexPathForRowAtPoint:*targetContentOffset];
@@ -58,7 +63,24 @@
     NSInteger skipCount = 8;
     NSLog(@"velocity: %@  targetContentOffset:%@ targetIndexPath:%@ visibleFirstIndex:%@", NSStringFromCGPoint(velocity), NSStringFromCGPoint(*targetContentOffset), targetIndexPath, firstIndexPath);
     if (labs(targetIndexPath.row - firstIndexPath.row) > skipCount) {
-//        NSArray *temp = [self indexPathsForRowsInRect:CGRectMake(<#CGFloat x#>, <#CGFloat y#>, <#CGFloat width#>, <#CGFloat height#>)]
+        NSArray *temp = [self indexPathsForRowsInRect:CGRectMake(0, targetContentOffset->y, self.width, self.height)];
+        NSMutableArray *visiIndexPaths = [NSMutableArray arrayWithArray:temp];
+        if (velocity.y < 0) { // 向上滚动
+            NSIndexPath *indexPath = [temp lastObject];
+            if (indexPath.row + 3 < datas.count) {
+                [visiIndexPaths addObject:[NSIndexPath indexPathForRow:indexPath.row + 1 inSection:0]];
+                [visiIndexPaths addObject:[NSIndexPath indexPathForRow:indexPath.row + 1 inSection:0]];
+                [visiIndexPaths addObject:[NSIndexPath indexPathForRow:indexPath.row + 1 inSection:0]];
+            }
+        }else {  // 向下滚动
+            NSIndexPath *indexPath = [temp firstObject];
+            if (indexPath.row > 3) {
+                [visiIndexPaths addObject:[NSIndexPath indexPathForRow:indexPath.row-3 inSection:0]];
+                [visiIndexPaths addObject:[NSIndexPath indexPathForRow:indexPath.row-2 inSection:0]];
+                [visiIndexPaths addObject:[NSIndexPath indexPathForRow:indexPath.row-1 inSection:0]];
+            }
+        }
+        [needLoadArr addObjectsFromArray:visiIndexPaths];
     }
 }
 
@@ -66,6 +88,11 @@
     NSDictionary *data = [datas objectAtIndex:indexPath.row];
 //    [cell clear];
     cell.data = data;
+    if (needLoadArr.count > 0 && [needLoadArr indexOfObject:indexPath] == NSNotFound) {
+//        [cell clear];
+        return;
+    }
+    [cell draw];
 }
 
 //读取信息

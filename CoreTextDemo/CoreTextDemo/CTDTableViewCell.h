@@ -11,6 +11,7 @@
 @interface CTDTableViewCell : UITableViewCell
 @property (nonatomic, copy) NSDictionary *data;
 
+- (void)draw;
 - (void)clear;
 - (void)releaseMemory;
 @end
