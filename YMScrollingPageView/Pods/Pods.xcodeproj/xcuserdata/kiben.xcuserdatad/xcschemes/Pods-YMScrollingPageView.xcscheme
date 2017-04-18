@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "EACA099C1901376059AAAE99679AF573"
+               BlueprintIdentifier = "DD64CF046CEEEEF33D339082C733C2B5"
                BuildableName = "Pods_YMScrollingPageView.framework"
                BlueprintName = "Pods-YMScrollingPageView"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "EACA099C1901376059AAAE99679AF573"
+            BlueprintIdentifier = "DD64CF046CEEEEF33D339082C733C2B5"
             BuildableName = "Pods_YMScrollingPageView.framework"
             BlueprintName = "Pods-YMScrollingPageView"
             ReferencedContainer = "container:Pods.xcodeproj">

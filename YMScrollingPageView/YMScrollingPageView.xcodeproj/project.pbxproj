@@ -98,12 +98,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DD0592BB1E1CB7ED008C77A2 /* Build configuration list for PBXNativeTarget "YMScrollingPageView" */;
 			buildPhases = (
-				B3033DB1D8E9F0C01E0DDF7A /* 📦 Check Pods Manifest.lock */,
+				B3033DB1D8E9F0C01E0DDF7A /* [CP] Check Pods Manifest.lock */,
 				DD0592A51E1CB7ED008C77A2 /* Sources */,
 				DD0592A61E1CB7ED008C77A2 /* Frameworks */,
 				DD0592A71E1CB7ED008C77A2 /* Resources */,
-				FE8D4079078E517328C1E147 /* 📦 Embed Pods Frameworks */,
-				7469302D61E388946464A96A /* 📦 Copy Pods Resources */,
+				FE8D4079078E517328C1E147 /* [CP] Embed Pods Frameworks */,
+				7469302D61E388946464A96A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -163,14 +163,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		7469302D61E388946464A96A /* 📦 Copy Pods Resources */ = {
+		7469302D61E388946464A96A /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -178,29 +178,29 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YMScrollingPageView/Pods-YMScrollingPageView-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B3033DB1D8E9F0C01E0DDF7A /* 📦 Check Pods Manifest.lock */ = {
+		B3033DB1D8E9F0C01E0DDF7A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		FE8D4079078E517328C1E147 /* 📦 Embed Pods Frameworks */ = {
+		FE8D4079078E517328C1E147 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -347,6 +347,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.yiomidd.YMScrollingPageView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				USER_HEADER_SEARCH_PATHS = "$(PODS_ROOT)/**";
 			};
 			name = Debug;
 		};
@@ -361,6 +362,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.yiomidd.YMScrollingPageView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				USER_HEADER_SEARCH_PATHS = "$(PODS_ROOT)/**";
 			};
 			name = Release;
 		};
