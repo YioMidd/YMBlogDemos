@@ -35,7 +35,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"%s",__func__);
+//    NSLog(@"%s",__func__);
     CTDTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([CTDTableViewCell class])];
     if (!cell) {
         cell = [[CTDTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:NSStringFromClass([CTDTableViewCell class])];
@@ -53,6 +53,19 @@
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
     [needLoadArr removeAllObjects];
+}
+
+- (BOOL)scrollViewShouldScrollToTop:(UIScrollView *)scrollView {
+    return YES;
+}
+
+- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView {
+//    [self loadContent];
+    NSLog(@"%s", __func__);
+}
+
+- (void)scrollViewDidScrollToTop:(UIScrollView *)scrollView {
+    NSLog(@"%s", __func__);
 }
 
 - (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset {
@@ -86,13 +99,30 @@
 
 - (void)drawCell:(CTDTableViewCell *)cell forIndexPath:(NSIndexPath *)indexPath {
     NSDictionary *data = [datas objectAtIndex:indexPath.row];
-//    [cell clear];
+    [cell clear];
     cell.data = data;
     if (needLoadArr.count > 0 && [needLoadArr indexOfObject:indexPath] == NSNotFound) {
-//        [cell clear];
+        [cell clear];
         return;
     }
     [cell draw];
+}
+
+- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
+    [needLoadArr removeAllObjects];
+    [self loadContent];
+    return [super hitTest:point withEvent:event];
+}
+
+- (void)loadContent {
+    if (self.indexPathsForVisibleRows.count <= 0) {
+        return;
+    }
+    if (self.visibleCells && self.visibleCells.count > 0) {
+        for (CTDTableViewCell *cell in self.visibleCells) {
+            [cell draw];
+        }
+    }
 }
 
 //读取信息
@@ -113,7 +143,7 @@
         }
         data[@"time"] = @"2015-05-25";
         data[@"from"] = from;
-        [self setCommentsFrom:dict toData :data];
+        [self setCommentsFrom:dict toData:data];
         [self setRepostsFrom:dict toData:data];
         data[@"text"] = dict[@"text"];
         

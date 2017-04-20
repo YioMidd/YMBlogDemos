@@ -100,16 +100,89 @@
     return [self sizeWithConstrainedToSize:CGSizeMake(width, CGFLOAT_MAX) fromFont:font1 lineSpace:lineSpace];
 }
 
-- (CGSize)sizeWithConstrainedToSize:(CGSize)size fromFont:(UIFont *)font1 lineSpace:(float)lineSpace{
-    return CGSizeZero;
+- (CGSize)sizeWithConstrainedToSize:(CGSize)size fromFont:(UIFont *)font lineSpace:(float)lineSpace {
+    
+    CTFontRef textFont = CTFontCreateWithName((__bridge CFStringRef)font.fontName, font.pointSize, NULL);
+    CGFloat minLineHeight = font.pointSize, maxLineHeight = minLineHeight + 10;
+    CTLineBreakMode lineBreakMode = kCTLineBreakByTruncatingTail;
+    CTTextAlignment textAlignment = kCTLeftTextAlignment;
+    
+    CTParagraphStyleSetting settings[6] = {
+        {kCTParagraphStyleSpecifierAlignment, sizeof(textAlignment), &textAlignment},
+        {kCTParagraphStyleSpecifierMinimumLineHeight, sizeof(minLineHeight), &minLineHeight},
+        {kCTParagraphStyleSpecifierMaximumLineHeight, sizeof(maxLineHeight), &maxLineHeight},
+        {kCTParagraphStyleSpecifierMinimumLineSpacing, sizeof(lineSpace), &lineSpace},
+        {kCTParagraphStyleSpecifierMaximumLineSpacing, sizeof(lineSpace), &lineSpace},
+        {kCTParagraphStyleSpecifierLineBreakMode, sizeof(CTLineBreakMode), &lineBreakMode},
+    };
+    CTParagraphStyleRef paragraphStyle = CTParagraphStyleCreate(settings, 6);
+    
+    NSMutableDictionary *attributes = [NSMutableDictionary dictionary];
+    [attributes setValue:(__bridge id _Nullable)(textFont) forKey:(__bridge NSString *)kCTFontAttributeName];
+    [attributes setValue:(__bridge id _Nullable)(paragraphStyle) forKey:(__bridge NSString *)kCTParagraphStyleAttributeName];
+    
+    NSAttributedString *attributeString = [[NSAttributedString alloc] initWithString:self attributes:attributes];
+    CFAttributedStringRef attributeStringRef = (__bridge CFAttributedStringRef)attributeString;
+    
+    CTFramesetterRef frameSetter = CTFramesetterCreateWithAttributedString(attributeStringRef);
+    CGSize textSize = CTFramesetterSuggestFrameSizeWithConstraints(frameSetter, CFRangeMake(0, CFAttributedStringGetLength(attributeStringRef)), NULL, size, NULL);
+    CFRelease(frameSetter);
+    CFRelease(textFont);
+    CFRelease(paragraphStyle);
+    return textSize;
 }
 
 - (void)drawInContext:(CGContextRef)context withPosition:(CGPoint)p andFont:(UIFont *)font andTextColor:(UIColor *)color andHeight:(float)height andWidth:(float)width{
+    CGSize size = CGSizeMake(width, font.pointSize + 10);
+    CGContextSetTextMatrix(context, CGAffineTransformIdentity);
+    CGContextTranslateCTM(context, 0, height);
+    CGContextScaleCTM(context, 1.0, -1.0);
+    
+    CTFontRef textFont = CTFontCreateWithName((__bridge CFStringRef)font.fontName, font.pointSize, NULL);
+    CGFloat minLineHeight = font.pointSize, maxLineHeight = minLineHeight + 10, lineSpace = 5;
+    CTLineBreakMode lineBreakMode = kCTLineBreakByTruncatingTail;
+    CTTextAlignment textAlignment = kCTLeftTextAlignment;
+    
+    CTParagraphStyleSetting settings[6] = {
+        {kCTParagraphStyleSpecifierAlignment, sizeof(textAlignment), &textAlignment},
+        {kCTParagraphStyleSpecifierMinimumLineHeight, sizeof(minLineHeight), &minLineHeight},
+        {kCTParagraphStyleSpecifierMaximumLineHeight, sizeof(maxLineHeight), &maxLineHeight},
+        {kCTParagraphStyleSpecifierMinimumLineSpacing, sizeof(lineSpace), &lineSpace},
+        {kCTParagraphStyleSpecifierMaximumLineSpacing, sizeof(lineSpace), &lineSpace},
+        {kCTParagraphStyleSpecifierLineBreakMode, sizeof(CTLineBreakMode), &lineBreakMode},
+    };
+    CTParagraphStyleRef paragraphStyle = CTParagraphStyleCreate(settings, 6);
+    
+    NSMutableDictionary *attributes = [NSMutableDictionary dictionary];
+    [attributes setValue:(__bridge id _Nullable)(textFont) forKey:(__bridge NSString *)kCTFontAttributeName];
+    [attributes setValue:color forKey:(__bridge NSString *)kCTForegroundColorAttributeName];
+    [attributes setValue:(__bridge id _Nullable)(paragraphStyle) forKey:(__bridge NSString *)kCTParagraphStyleAttributeName];
+    
+    NSAttributedString *attributeString = [[NSAttributedString alloc] initWithString:self attributes:attributes];
+    CFAttributedStringRef attributeStringRef = (__bridge CFAttributedStringRef)attributeString;
+    
+    CGRect rect = {{p.x, height - p.y - size.height}, size};
+    CGMutablePathRef path = CGPathCreateMutable();
+    CGPathAddRect(path, NULL, rect);
+    
+    CTFramesetterRef frameSetter = CTFramesetterCreateWithAttributedString(attributeStringRef);
+    CTFrameRef frameRef = CTFramesetterCreateFrame(frameSetter, CFRangeMake(0, CFAttributedStringGetLength(attributeStringRef)), path, NULL);
+    CTFrameDraw(frameRef, context);
+    CGPathRelease(path);
+    CFRelease(frameSetter);
+    CFRelease(frameRef);
+    CFRelease(textFont);
+    CFRelease(paragraphStyle);
+    
+    // 上下文翻转回去
+    CGContextSetTextMatrix(context, CGAffineTransformIdentity);
+    CGContextTranslateCTM(context, 0, height);
+    CGContextScaleCTM(context, 1.0, -1.0);
     
 }
 
 - (void)drawInContext:(CGContextRef)context withPosition:(CGPoint)p andFont:(UIFont *)font andTextColor:(UIColor *)color andHeight:(float)height{
-    [self drawInContext:context withPosition:p andFont:font andTextColor:color andHeight:height andWidth:CGFLOAT_MAX];
+    [self drawInContext:context withPosition:p andFont:font andTextColor:color andHeight:height andWidth:[UIScreen screenWidth]];
 }
 
 @end

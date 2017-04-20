@@ -23,6 +23,7 @@
 		DD0680F71EA668AE009ED8F1 /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = DD0680E51EA668AE009ED8F1 /* UIImageView+HighlightedWebCache.m */; };
 		DD0680F81EA668AE009ED8F1 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = DD0680E71EA668AE009ED8F1 /* UIImageView+WebCache.m */; };
 		DD0680F91EA668AE009ED8F1 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = DD0680E91EA668AE009ED8F1 /* UIView+WebCacheOperation.m */; };
+		DD0680FC1EA907E8009ED8F1 /* CTDLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = DD0680FB1EA907E8009ED8F1 /* CTDLabel.m */; };
 		DDFB98C51EA5F37A00D76FB6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DDFB98C41EA5F37A00D76FB6 /* main.m */; };
 		DDFB98C81EA5F37A00D76FB6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DDFB98C71EA5F37A00D76FB6 /* AppDelegate.m */; };
 		DDFB98CB1EA5F37A00D76FB6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDFB98CA1EA5F37A00D76FB6 /* ViewController.m */; };
@@ -74,6 +75,8 @@
 		DD0680E71EA668AE009ED8F1 /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		DD0680E81EA668AE009ED8F1 /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
 		DD0680E91EA668AE009ED8F1 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
+		DD0680FA1EA907E8009ED8F1 /* CTDLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTDLabel.h; sourceTree = "<group>"; };
+		DD0680FB1EA907E8009ED8F1 /* CTDLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTDLabel.m; sourceTree = "<group>"; };
 		DDFB98C01EA5F37A00D76FB6 /* CoreTextDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreTextDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDFB98C41EA5F37A00D76FB6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DDFB98C61EA5F37A00D76FB6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -207,6 +210,8 @@
 				DDFB98DB1EA5F51100D76FB6 /* CTDTableView.m */,
 				DDFB98DE1EA5F54100D76FB6 /* CTDTableViewCell.h */,
 				DDFB98DF1EA5F54100D76FB6 /* CTDTableViewCell.m */,
+				DD0680FA1EA907E8009ED8F1 /* CTDLabel.h */,
+				DD0680FB1EA907E8009ED8F1 /* CTDLabel.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -317,6 +322,7 @@
 				DDFB98CB1EA5F37A00D76FB6 /* ViewController.m in Sources */,
 				DD0680F51EA668AE009ED8F1 /* UIImage+MultiFormat.m in Sources */,
 				DDFB98C81EA5F37A00D76FB6 /* AppDelegate.m in Sources */,
+				DD0680FC1EA907E8009ED8F1 /* CTDLabel.m in Sources */,
 				DD0680EC1EA668AE009ED8F1 /* SDImageCache.m in Sources */,
 				DDFB98C51EA5F37A00D76FB6 /* main.m in Sources */,
 				DDFB98DC1EA5F51100D76FB6 /* CTDTableView.m in Sources */,
